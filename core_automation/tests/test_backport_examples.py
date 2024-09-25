@@ -32,11 +32,10 @@ class TestBackportExampleAutomation(unittest.TestCase):
         mock_print.assert_any_call("Both directories have the same number of files.")
 
     def test_string_replacement(self):
-        examples_dir = "/home/owencorrigan/Documents/Work_Repos/amqstreams-1-openshift-image/examples"
+        examples_dir = "examples"
         file_name = "README.md"
-
         update_example_dir_readme(examples_dir, file_name)
-        with open("../strimzi-0.43.0/README.md", 'r') as f:
+        with open("../../examples/README.md", 'r') as f:
             content = f.read()
         self.assertIn("AMQ Streams", content)
 

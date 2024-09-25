@@ -22,14 +22,14 @@ def get_product_version(branch_name):
 # Determine target Strimzi release number based on product version (which we extract from branch name)
 def get_target_strimzi_version(product_version):
     # account for 26-dev branch
-    strimzi_minor_version = 2 * (product_version - 26) + 43
+    strimzi_minor_version = 2 * (product_version - 26) + 39
     strimzi_version = f"0.{strimzi_minor_version}.0"
     return strimzi_version
 
 
 # Determine latest Kafka release number based on product version (which we extract from branch name)
 def get_kafka_version_to_replace(product_version):
-    strimzi_minor_version = (product_version + 11)
+    strimzi_minor_version = (product_version + 9)
     strimzi_version = f"{strimzi_minor_version / 10}"
     return strimzi_version
 

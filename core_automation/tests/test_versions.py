@@ -21,35 +21,35 @@ class TestVersions(unittest.TestCase):
 
 # working off 26-dev branch, hence the discrepancy between 26 and 28
     def test_get_target_strimzi_release(self):
-        product_version = 26
+        product_version = 28
         expected_strimzi_version = "0.43.0"
         actual_strimzi_version = versions.get_target_strimzi_version(product_version)
         self.assertEqual(actual_strimzi_version, expected_strimzi_version)
 
-        product_version = 25
+        product_version = 27
         expected_strimzi_version = "0.41.0"
         actual_strimzi_version = versions.get_target_strimzi_version(product_version)
         self.assertEqual(actual_strimzi_version, expected_strimzi_version)
 
     def test_get_latest_kafka_release(self):
-        product_version = 26
+        product_version = 28
         expected_kafka_version = "3.7"
         actual_kafka_version = versions.get_kafka_version_to_replace(product_version)
         self.assertEqual(actual_kafka_version, expected_kafka_version)
 
-        product_version = 27
+        product_version = 29
         expected_kafka_version = "3.8"
         actual_kafka_version = versions.get_kafka_version_to_replace(product_version)
         self.assertEqual(actual_kafka_version, expected_kafka_version)
 
     def test_get_target_kafka_version(self):
-        product_version = 25
-        expected_kafka_version = 3.7
+        product_version = 28
+        expected_kafka_version = 3.8
         actual_kafka_version = versions.get_kafka_version_replacement(product_version)
         self.assertEqual(actual_kafka_version, expected_kafka_version)
 
-        product_version = 26
-        expected_kafka_version = 3.8
+        product_version = 27
+        expected_kafka_version = 3.7
         actual_kafka_version = versions.get_kafka_version_replacement(product_version)
         self.assertEqual(actual_kafka_version, expected_kafka_version)
 

@@ -18,7 +18,7 @@ def _load_yaml_data(file_path):
 
 
 class TestBackportExampleAutomation(unittest.TestCase):
-    RESOURCES_PATH = "/home/owencorrigan/Documents/Work_Repos/amqstreams-1-openshift-image/core_automation/tests/resources/"
+    RESOURCES_PATH = "resources/"
     COMMON_REGISTRY_URL = "registry.redhat.io/amq-streams/"
     EXPECTED_NEWEST_KAFKA_VERSION = "3.8.0"
     EXPECTED_UPGRADE_KAFKA_VERSION = "3.7.0"

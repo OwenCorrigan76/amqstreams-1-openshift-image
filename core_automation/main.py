@@ -47,9 +47,8 @@ def backport_example_files(target_strimzi_version, kafka_version_to_replace, kaf
     backport_examples.update_yaml_files(paths['full_example_dir'], kafka_version_to_replace, kafka_version_replacement)
 
     files, directories = get_file_and_directory_deletions(target_strimzi_version)
-    backport_examples.delete_file(*files)
-    backport_examples.delete_directory(*directories)
 
+    backport_examples.delete_file(*files)
     backport_examples.update_example_dir_readme(paths['full_example_dir'], 'README.md')
     backport_examples.copy_directory_excluding_readme("examples", "examples", paths['base_dir'])
 
@@ -95,7 +94,7 @@ def main():
 
     # Clean up created upstream resources
     strimzi_dir = f"strimzi-{target_strimzi_version}"
-    backport_examples.delete_created_upstream_resources(strimzi_dir)
+   # backport_examples.delete_created_upstream_resources(strimzi_dir)
 
 
 if __name__ == "__main__":
